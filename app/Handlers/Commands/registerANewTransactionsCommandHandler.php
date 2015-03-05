@@ -39,10 +39,10 @@ class registerANewTransactionsCommandHandler {
         $vendor = $this->vendor->whereName($command->data['vendor'])->first();
         if(!$vendor)
         {
-            $vendor =$this->vendor->create(compact('name'));
+            $data = ['name' => $command->data['vendor']];
+            $vendor =$this->vendor->create($data);
         }
         $command->data['vendor'] = $vendor->id;
 		$this->transaction->create($command->data);
 	}
-
 }
