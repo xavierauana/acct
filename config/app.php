@@ -145,6 +145,7 @@ return [
 		'App\Providers\ConfigServiceProvider',
 		'App\Providers\EventServiceProvider',
 		'App\Providers\RouteServiceProvider',
+        'Intervention\Image\ImageServiceProvider',
 		'App\Providers\ContractBindingServiceProvider',
 
 	],
@@ -195,6 +196,7 @@ return [
 		'Validator' => 'Illuminate\Support\Facades\Validator',
 		'View'      => 'Illuminate\Support\Facades\View',
 		'Form'      => 'Illuminate\Html\FormFacade',
+        'Image'     => 'Intervention\Image\Facades\Image',
 	],
 
 ];

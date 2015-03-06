@@ -21,6 +21,7 @@ class TransactionRequest extends Request {
 	 */
 	public function rules()
 	{
+        dd($this->all());
 		return [
 			'item' => 'required',
 			'amount' => 'required|numeric',

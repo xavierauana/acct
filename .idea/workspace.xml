@@ -29,8 +29,8 @@
           <file leaf-file-name="TransactionsController.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TransactionsController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-5.0" vertical-offset="1350" max-vertical-offset="3330">
-                  <caret line="49" column="6" selection-start-line="49" selection-start-column="6" selection-end-line="49" selection-end-column="6" />
+                <state vertical-scroll-proportion="-17.5" vertical-offset="1440" max-vertical-offset="3330">
+                  <caret line="62" column="6" selection-start-line="62" selection-start-column="6" selection-end-line="62" selection-end-column="6" />
                   <folding>
                     <element signature="e#39#54#0#PHP" expanded="true" />
                   </folding>
@@ -38,24 +38,26 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="create.blade.php" pinned="false" current-in-tab="false">
+          <file leaf-file-name="create.blade.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/resources/views/create.blade.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-19.083334" vertical-offset="1612" max-vertical-offset="2520">
-                  <caret line="69" column="34" selection-start-line="69" selection-start-column="34" selection-end-line="69" selection-end-column="34" />
+                <state vertical-scroll-proportion="0.4693396" vertical-offset="2452" max-vertical-offset="3690">
+                  <caret line="95" column="50" selection-start-line="95" selection-start-column="50" selection-end-line="95" selection-end-column="50" />
                   <folding>
-                    <element signature="e#2228#2248#0#HTML" expanded="true" />
-                    <element signature="e#2456#2478#0#HTML" expanded="true" />
+                    <element signature="e#2482#2504#0#HTML" expanded="true" />
+                    <element signature="e#5102#5174#0#HTML" expanded="false" />
+                    <element signature="e#5215#5434#0#HTML" expanded="false" />
+                    <element signature="e#5470#5699#0#HTML" expanded="false" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Transaction.php" pinned="false" current-in-tab="true">
+          <file leaf-file-name="Transaction.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/Transaction.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.6721698" vertical-offset="0" max-vertical-offset="1680">
-                  <caret line="23" column="28" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="28" />
+                <state vertical-scroll-proportion="-13.75" vertical-offset="0" max-vertical-offset="1680">
+                  <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
                   <folding />
                 </state>
               </provider>
@@ -65,14 +67,24 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="registerANewTransactionsCommandHandler.php" pinned="false" current-in-tab="true">
+          <file leaf-file-name="registerANewTransactionsCommandHandler.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/Handlers/Commands/registerANewTransactionsCommandHandler.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.3278302" vertical-offset="1252" max-vertical-offset="2250">
-                  <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+                <state vertical-scroll-proportion="-20.333334" vertical-offset="1402" max-vertical-offset="2250">
+                  <caret line="63" column="39" selection-start-line="63" selection-start-column="39" selection-end-line="63" selection-end-column="39" />
                   <folding>
                     <element signature="e#40#89#0#PHP" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="TransactionRequest.php" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/Http/Requests/TransactionRequest.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.4693396" vertical-offset="292" max-vertical-offset="1200">
+                  <caret line="23" column="25" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -96,20 +108,20 @@
         <option value="$PROJECT_DIR$/app/Entities/VendorEntity.php" />
         <option value="$PROJECT_DIR$/app/Vendor.php" />
         <option value="$PROJECT_DIR$/database/migrations/2015_03_05_035436_create_transactions_table.php" />
-        <option value="$PROJECT_DIR$/config/app.php" />
         <option value="$PROJECT_DIR$/resources/views/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/app/Entities/AbstractEntity.php" />
         <option value="$PROJECT_DIR$/app/Entities/TransactionEntity.php" />
         <option value="$PROJECT_DIR$/app/Handlers/Commands/getAllTransactionsCommandHandler.php" />
-        <option value="$PROJECT_DIR$/app/Http/Requests/TransactionRequest.php" />
         <option value="$PROJECT_DIR$/resources/views/app.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/create.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2015_03_06_021631_add_receipt_to_transactions_table.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/TransactionsController.php" />
         <option value="$PROJECT_DIR$/app/Commands/registerANewTransactionsCommand.php" />
         <option value="$PROJECT_DIR$/app/Transaction.php" />
         <option value="$PROJECT_DIR$/app/Handlers/Commands/registerANewTransactionsCommandHandler.php" />
+        <option value="$PROJECT_DIR$/config/app.php" />
+        <option value="$PROJECT_DIR$/app/Http/Requests/TransactionRequest.php" />
+        <option value="$PROJECT_DIR$/resources/views/create.blade.php" />
       </list>
     </option>
   </component>
@@ -607,26 +619,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/app.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.75" vertical-offset="5332" max-vertical-offset="6180">
-          <caret line="100" column="41" selection-start-line="100" selection-start-column="41" selection-end-line="100" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/app.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6367925" vertical-offset="30" max-vertical-offset="2310">
           <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Requests/TransactionRequest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6108491" vertical-offset="292" max-vertical-offset="1170">
-          <caret line="27" column="36" selection-start-line="27" selection-start-column="36" selection-end-line="27" selection-end-column="36" />
           <folding />
         </state>
       </provider>
@@ -636,17 +632,6 @@
         <state vertical-scroll-proportion="0.6014151" vertical-offset="0" max-vertical-offset="1170">
           <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-19.083334" vertical-offset="1612" max-vertical-offset="2520">
-          <caret line="69" column="34" selection-start-line="69" selection-start-column="34" selection-end-line="69" selection-end-column="34" />
-          <folding>
-            <element signature="e#2228#2248#0#HTML" expanded="true" />
-            <element signature="e#2456#2478#0#HTML" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -660,30 +645,67 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TransactionsController.php">
+    <entry file="file://$PROJECT_DIR$/bootstrap/app.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.0" vertical-offset="1350" max-vertical-offset="3330">
-          <caret line="49" column="6" selection-start-line="49" selection-start-column="6" selection-end-line="49" selection-end-column="6" />
-          <folding>
-            <element signature="e#39#54#0#PHP" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1560">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/app.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="6.7570753" vertical-offset="210" max-vertical-offset="6240">
+          <caret line="198" column="20" selection-start-line="198" selection-start-column="20" selection-end-line="198" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Transaction.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6721698" vertical-offset="0" max-vertical-offset="1680">
-          <caret line="23" column="28" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="28" />
+        <state vertical-scroll-proportion="-13.75" vertical-offset="0" max-vertical-offset="1680">
+          <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Handlers/Commands/registerANewTransactionsCommandHandler.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3278302" vertical-offset="1252" max-vertical-offset="2250">
-          <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+        <state vertical-scroll-proportion="-20.333334" vertical-offset="1402" max-vertical-offset="2250">
+          <caret line="63" column="39" selection-start-line="63" selection-start-column="39" selection-end-line="63" selection-end-column="39" />
           <folding>
             <element signature="e#40#89#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Requests/TransactionRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4693396" vertical-offset="292" max-vertical-offset="1200">
+          <caret line="23" column="25" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TransactionsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-17.5" vertical-offset="1440" max-vertical-offset="3330">
+          <caret line="62" column="6" selection-start-line="62" selection-start-column="6" selection-end-line="62" selection-end-column="6" />
+          <folding>
+            <element signature="e#39#54#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/create.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4693396" vertical-offset="2452" max-vertical-offset="3690">
+          <caret line="95" column="50" selection-start-line="95" selection-start-column="50" selection-end-line="95" selection-end-column="50" />
+          <folding>
+            <element signature="e#2482#2504#0#HTML" expanded="true" />
+            <element signature="e#5102#5174#0#HTML" expanded="false" />
+            <element signature="e#5215#5434#0#HTML" expanded="false" />
+            <element signature="e#5470#5699#0#HTML" expanded="false" />
           </folding>
         </state>
       </provider>
