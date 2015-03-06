@@ -146,6 +146,7 @@ return [
 		'App\Providers\EventServiceProvider',
 		'App\Providers\RouteServiceProvider',
         'Intervention\Image\ImageServiceProvider',
+        'Jenssegers\Agent\AgentServiceProvider',
 		'App\Providers\ContractBindingServiceProvider',
 
 	],
@@ -197,6 +198,7 @@ return [
 		'View'      => 'Illuminate\Support\Facades\View',
 		'Form'      => 'Illuminate\Html\FormFacade',
         'Image'     => 'Intervention\Image\Facades\Image',
+        'Agent'     => 'Jenssegers\Agent\Facades\Agent',
 	],
 
 ];

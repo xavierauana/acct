@@ -57,16 +57,18 @@
 @endsection
 
 @section('scripts')
+    @if(!$isDesktop)
+        <script>
+            navigator.geolocation.getCurrentPosition(function(position){
+                $(".panel-body").prepend("<span>"+position.coords.latitude+"</span>");
+            },function(error){
+                console.log(error.code);
+                $(".panel-body").prepend("<span>something Wrong</span>");
+            });
+        </script>
+    @endif
+
     <script>
-
-        navigator.geolocation.getCurrentPosition(function(position){
-            $(".panel-body").prepend("<span>"+position.coords.latitude+"</span>");
-        },function(){
-            $(".panel-body").prepend("<span>something Wrong</span>");
-        });
-        console.log(navigator);
-
-
         var receipt = $("[name='receipt']");
         var uploadButton =  $("#uploadButton");
         var removeButton = $("#removeButton");

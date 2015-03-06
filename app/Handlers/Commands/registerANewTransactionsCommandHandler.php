@@ -6,6 +6,7 @@ use App\Contracts\Repositories\TransactionInterface;
 use App\Contracts\Repositories\VendorInterface;
 use Illuminate\Contracts\Filesystem\Factory as Filesystem;
 use Illuminate\Queue\InteractsWithQueue;
+use Jenssegers\Agent\Facades\Agent;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 class registerANewTransactionsCommandHandler {

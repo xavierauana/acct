@@ -11,6 +11,7 @@ use App\Http\Controllers\Controller;
 
 use App\Http\Requests\TransactionRequest;
 use Illuminate\Http\Request;
+use Jenssegers\Agent\Facades\Agent;
 
 class TransactionsController extends Controller {
     /**
@@ -42,7 +43,8 @@ class TransactionsController extends Controller {
 	 */
 	public function create()
     {
-		return view('create');
+        $isDesktop = Agent::isDesktop();
+		return view('create',compact('isDesktop'));
 	}
 
     /**
