@@ -14,6 +14,9 @@
 Route::get('/', 'WelcomeController@index');
 
     Route::group(['middleware'=>'auth'], function(){
+        Route::post("/transactions", function(\App\Http\Requests\Request $request){
+           return response($request->all());
+        });
         Route::resource('transactions','TransactionsController');
 });
 
