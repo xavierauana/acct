@@ -54,7 +54,7 @@ class TransactionsController extends Controller {
      */
 	public function store(TransactionRequest $request)
 	{
-        $this->dispatch(new registerANewTransactionsCommand($request->all()));
+        $this->dispatch(new registerANewTransactionsCommand($request));
         return redirect()->route('transactions.create');
 	}
 

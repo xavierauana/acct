@@ -13,6 +13,7 @@ class Transaction extends Model implements TransactionInterface{
         'vendor',
         'item',
         'payment',
+        'receipt',
     ];
 
     /**

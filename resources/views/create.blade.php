@@ -6,7 +6,7 @@
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        {!! Form::open(['route'=>['transactions.store'], "role"=>"form"]) !!}
+                        {!! Form::open(['route'=>['transactions.store'], "role"=>"form", "files"=>true]) !!}
                         {{-- Purchased Item Form Input--}}
                         <div class="form-group">
                             {!! Form::label("item","Purchased Item:") !!}
@@ -35,6 +35,14 @@
                             {!! $errors->first('payment',"<span class='input-error'>:message</span>") !!}
                         </div>
 
+                        <button class="btn btn-default" id="upload">Upload Receipt</button>
+                        <button class="btn btn-danger" id="remove" style="display:none">Remove Receipt</button>
+                        {{-- Upload Receipt Form Input--}}
+                        <div class="form-group">
+                            <input type="file" name="receipt" id="receipt" style="display: none;"/>
+                            {!! $errors->first('receipt',"<span class='input-error'>:message</span>") !!}
+                        </div>
+
                         {!! Form::submit("Register Purchase", ["class"=>"btn btn-primary btn-block btn-lg"]) !!}
 
                         {!! Form::close() !!}
@@ -43,4 +51,28 @@
             </div>
         </div>
     </div>
+@endsection
+
+@section('scripts')
+    <script>
+        receipt = $("[name='receipt']");
+        uploadButton =  $("#upload");
+        uploadButton.click(function(e){
+            e.preventDefault();
+            receipt.click();
+        });
+        $("#remove").click(function(e){
+            e.preventDefault();
+            receipt.val("");
+            uploadButton.text("Upload Receipt").addClass('btn-default').removeClass('btn-primary');
+            $("#remove").css('display','none')
+        });
+        receipt.change(function(){
+            if($(this).val() != "")
+            {
+               uploadButton.text("Change File").removeClass('btn-default').addClass('btn-primary');
+                $("#remove").css('display','inline')
+            }
+        })
+    </script>
 @endsection

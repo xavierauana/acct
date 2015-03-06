@@ -26,6 +26,7 @@ class TransactionRequest extends Request {
 			'amount' => 'required|numeric',
 			'vendor' => 'required',
 			'payment' => 'required',
+			'receipt' => 'image'
 		];
 	}
 
