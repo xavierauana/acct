@@ -58,6 +58,15 @@
 
 @section('scripts')
     <script>
+
+        navigator.geolocation.getCurrentPosition(function(position){
+            $(".panel-body").prepend("<span>"+position.coords.latitude+"</span>");
+        },function(){
+            $(".panel-body").prepend("<span>something Wrong</span>");
+        });
+        console.log(navigator);
+
+
         var receipt = $("[name='receipt']");
         var uploadButton =  $("#uploadButton");
         var removeButton = $("#removeButton");
@@ -93,7 +102,7 @@
             request.open(method, url);
             request.send(formData);
         };
-        
+
         if(receiptIsNotEmpty())
         {
             uploadButton.text("Change File").removeClass('btn-default').addClass('btn-primary');
