@@ -26,8 +26,8 @@ class TransactionRequest extends Request {
 			'amount' => 'required|numeric',
 			'vendor' => 'required',
 			'payment' => 'required',
-			'receipt' => 'image'
+			'receipt' => 'image',
+			'position' => 'regex:/^-?(\d{2,3}).(\d{6,}),-?(\d{2,3}).(\d{6,})$/',
 		];
 	}
-
 }

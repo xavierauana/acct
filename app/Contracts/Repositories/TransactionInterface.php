@@ -24,4 +24,11 @@ interface TransactionInterface {
      * @return mixed
      */
     public function allTransactions();
+
+    /**
+     * @param $id
+     *
+     * @return \App\Contracts\Repositories\TransactionInterface
+     */
+    public function getById($id);
 }

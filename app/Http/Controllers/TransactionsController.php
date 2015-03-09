@@ -2,6 +2,7 @@
 
 use App\Amount;
 use App\Commands\getAllTransactionsCommand;
+use App\Commands\getTheTransactionCommand;
 use App\Commands\registerANewTransactionsCommand;
 use App\Contracts\Repositories\TransactionInterface;
 use App\Contracts\Repositories\VendorInterface;
@@ -79,7 +80,8 @@ class TransactionsController extends Controller {
 	 */
 	public function edit($id)
 	{
-		//
+        $transaction = $this->dispatch(new getTheTransactionCommand($id));
+		return view('edit',compact('transaction'));
 	}
 
 	/**

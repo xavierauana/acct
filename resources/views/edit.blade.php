@@ -6,7 +6,7 @@
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        {!! Form::open(['route'=>['transactions.store'], "role"=>"form", "files"=>true, 'id'=>'form']) !!}
+                        {!! Form::model($transaction, ['route'=>['transactions.update'], "role"=>"form", "files"=>true, 'id'=>'form']) !!}
                         {{-- Purchased Item Form Input--}}
                         <div class="form-group">
                             {!! Form::label("item","Purchased Item:") !!}
@@ -116,54 +116,54 @@
             uploadButton.text("Change File").removeClass('btn-default').addClass('btn-primary');
             removeButton.css('display','inline')
         }
-//        form.submit(function(e){
-//            if(!receiptIsNotEmpty() || resizedImage !='' )
-//            {
-//                return
-//            }else{
-//                var files = document.getElementById('receipt').files;
-//                var reader = new FileReader;
-//                reader.onloadend = function(e) {
-//                    var image = new Image();
-//                    image.src = reader.result;
-//
-//                    image.onload = function(){
-//                        var canvas = document.createElement('canvas');
-//                        canvas.width = image.width/2;
-//                        canvas.height = image.height/2;
-//                        var ctx = canvas.getContext('2d');
-//                        ctx.drawImage(this, 0, 0, image.width/2, image.height/2);
-//                        resizedImage = canvas.mozGetAsFile(files[0].name);
-////                        sendAjax($(form), $('inputs'), 'receipt', resizedImage);
-////                        resizedImage = canvas.toDataURL();
-////                        var newInput = document.getElementById('modified');
-////                        var formData = new FormData();
-////                        $.each($('input'), function(){
-////                            var name = $(this).attr('name');
-////                            if(nameIsValid(name))
-////                            {
-////                                if(name == 'receipt')
-////                                {
-////                                    formData.append(name, resizedImage);
-////                                }else{
-////                                    formData.append(name, $(this).val());
-////                                }
-////                            }
-////                        });
-////                        var request = $.ajax({
-////                            method:$(form).attr('method'),
-////                            url:$(form).attr('action'),
-////                            data:$(form).serialize()
-////                        });
-////                        request.always = function(){
-////                            console.log('fired')
-////                        };
-//                    }
-//                };
-//                reader.readAsDataURL(files[0]);
-//            }
-//            e.preventDefault();
-//        });
+        //        form.submit(function(e){
+        //            if(!receiptIsNotEmpty() || resizedImage !='' )
+        //            {
+        //                return
+        //            }else{
+        //                var files = document.getElementById('receipt').files;
+        //                var reader = new FileReader;
+        //                reader.onloadend = function(e) {
+        //                    var image = new Image();
+        //                    image.src = reader.result;
+        //
+        //                    image.onload = function(){
+        //                        var canvas = document.createElement('canvas');
+        //                        canvas.width = image.width/2;
+        //                        canvas.height = image.height/2;
+        //                        var ctx = canvas.getContext('2d');
+        //                        ctx.drawImage(this, 0, 0, image.width/2, image.height/2);
+        //                        resizedImage = canvas.mozGetAsFile(files[0].name);
+        ////                        sendAjax($(form), $('inputs'), 'receipt', resizedImage);
+        ////                        resizedImage = canvas.toDataURL();
+        ////                        var newInput = document.getElementById('modified');
+        ////                        var formData = new FormData();
+        ////                        $.each($('input'), function(){
+        ////                            var name = $(this).attr('name');
+        ////                            if(nameIsValid(name))
+        ////                            {
+        ////                                if(name == 'receipt')
+        ////                                {
+        ////                                    formData.append(name, resizedImage);
+        ////                                }else{
+        ////                                    formData.append(name, $(this).val());
+        ////                                }
+        ////                            }
+        ////                        });
+        ////                        var request = $.ajax({
+        ////                            method:$(form).attr('method'),
+        ////                            url:$(form).attr('action'),
+        ////                            data:$(form).serialize()
+        ////                        });
+        ////                        request.always = function(){
+        ////                            console.log('fired')
+        ////                        };
+        //                    }
+        //                };
+        //                reader.readAsDataURL(files[0]);
+        //            }
+        //            e.preventDefault();
+        //        });
         uploadButton.click(function(e){
             e.preventDefault();
             receipt.click();

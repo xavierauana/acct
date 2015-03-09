@@ -12,14 +12,18 @@
                             <th>Vendor</th>
                             <th>Amount</th>
                             <th>Payment</th>
+                            <th>edit</th>
                             </thead>
                             <tbody>
                             @foreach($transactions as $transaction)
                                 <tr>
                                     <td>{{$transaction->item}}</td>
                                     <td>{{$transaction->vendor}}</td>
-                                    <td>{{$transaction->amount}}</td>
+                                    <td>{{"$".number_format($transaction->amount, 1, '.', ','); }}</td>
                                     <td>{{$transaction->payment}}</td>
+                                    <td>
+                                        <a class="btn btn-xs btn-info" href="{{route('transactions.edit', $transaction->id)}}">edit</a>
+                                    </td>
                                 </tr>
                             @endforeach
                             </tbody>

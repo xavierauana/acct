@@ -14,6 +14,7 @@ class Transaction extends Model implements TransactionInterface{
         'item',
         'payment',
         'receipt',
+        'position',
     ];
 
     /**
@@ -44,11 +45,20 @@ class Transaction extends Model implements TransactionInterface{
     {
         return App::make(VendorInterface::class)->findOrFail($vendorId)->name;
     }
+//
+//    public function getAmountAttribute($amount)
+//    {
+//        return "$".number_format($amount, 1, '.', ',');
+//    }
 
-    public function getAmountAttribute($amount)
+
+    /**
+     * @param $id
+     *
+     * @return \App\Contracts\Repositories\TransactionInterface
+     */
+    public function getById($id)
     {
-        return "$".number_format($amount, 1, '.', ',');
+        return $this->findOrFail($id);
     }
-
-
 }
