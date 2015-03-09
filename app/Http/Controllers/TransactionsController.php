@@ -4,6 +4,7 @@ use App\Amount;
 use App\Commands\getAllTransactionsCommand;
 use App\Commands\getTheTransactionCommand;
 use App\Commands\registerANewTransactionsCommand;
+use App\Commands\updatePurchaseRecordCommand;
 use App\Contracts\Repositories\TransactionInterface;
 use App\Contracts\Repositories\VendorInterface;
 use App\Entities\TransactionEntity;
@@ -12,6 +13,7 @@ use App\Http\Controllers\Controller;
 
 use App\Http\Requests\TransactionRequest;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Jenssegers\Agent\Facades\Agent;
 
 class TransactionsController extends Controller {
@@ -34,7 +36,7 @@ class TransactionsController extends Controller {
 	public function index()
 	{
         $transactions = $this->dispatch(new getAllTransactionsCommand());
-        return view('index',compact('transactions'));
+        return view('index', compact('transactions'));
 	}
 
 	/**
@@ -81,18 +83,21 @@ class TransactionsController extends Controller {
 	public function edit($id)
 	{
         $transaction = $this->dispatch(new getTheTransactionCommand($id));
-		return view('edit',compact('transaction'));
+		return view('edit', compact('transaction'));
 	}
 
-	/**
-	 * Update the specified resource in storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function update($id)
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  int                                  $id
+     * @param \App\Http\Requests\TransactionRequest $request
+     *
+     * @return \Illuminate\Http\Response
+     */
+	public function update($id, TransactionRequest $request)
 	{
-		//
+        $this->dispatch(new updatePurchaseRecordCommand($id, $request));
+        return redirect()->route('transactions.index');
 	}
 
 	/**

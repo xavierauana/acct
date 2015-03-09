@@ -45,11 +45,6 @@ class Transaction extends Model implements TransactionInterface{
     {
         return App::make(VendorInterface::class)->findOrFail($vendorId)->name;
     }
-//
-//    public function getAmountAttribute($amount)
-//    {
-//        return "$".number_format($amount, 1, '.', ',');
-//    }
 
 
     /**
@@ -60,5 +55,17 @@ class Transaction extends Model implements TransactionInterface{
     public function getById($id)
     {
         return $this->findOrFail($id);
+    }
+
+    /**
+     * @param       $id
+     * @param array $data
+     *
+     * @return mixed
+     */
+    public function updateRecord($id, array $data)
+    {
+        $record = $this->findOrFail($id);
+        $record->update($data);
     }
 }

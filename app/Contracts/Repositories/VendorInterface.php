@@ -11,4 +11,10 @@ namespace App\Contracts\Repositories;
 
 interface VendorInterface {
 
+    /**
+     * @param $name
+     *
+     * @return /App/Contracts/Repositories/VendorInterface
+     */
+    public function findOrCreateVendorByName($name);
 }

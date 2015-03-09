@@ -31,4 +31,12 @@ interface TransactionInterface {
      * @return \App\Contracts\Repositories\TransactionInterface
      */
     public function getById($id);
+
+    /**
+     * @param       $id
+     * @param array $data
+     *
+     * @return mixed
+     */
+    public function updateRecord($id, array $data);
 }

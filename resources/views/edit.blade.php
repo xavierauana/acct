@@ -6,50 +6,22 @@
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        {!! Form::model($transaction, ['route'=>['transactions.update'], "role"=>"form", "files"=>true, 'id'=>'form']) !!}
-                        {{-- Purchased Item Form Input--}}
-                        <div class="form-group">
-                            {!! Form::label("item","Purchased Item:") !!}
-                            {!! Form::text("item",null,["class"=>"form-control", "autocomplete"=>"on"]) !!}
-                            {!! $errors->first('item',"<span class='input-error'>:message</span>") !!}
-                        </div>
-
-                        {{-- Amount Form Input--}}
-                        <div class="form-group">
-                            {!! Form::label("amount","Amount:") !!}
-                            {!! Form::input("number","amount",null,["class"=>"form-control", "step"=>"any"]) !!}
-                            {!! $errors->first('amount',"<span class='input-error'>:message</span>") !!}
-                        </div>
-
-                        {{-- Vendor Form Input--}}
-                        <div class="form-group">
-                            {!! Form::label("vendor","Vendor:") !!}
-                            {!! Form::text("vendor",null,["class"=>"form-control", "autocomplete"=>"on"]) !!}
-                            {!! $errors->first('vendor',"<span class='input-error'>:message</span>") !!}
-                        </div>
-
-                        {{-- Payment Method Form Input--}}
-                        <div class="form-group">
-                            {!! Form::label("payment","Payment Method:") !!}
-                            {!! Form::select("payment",[0=>"Cash", 1=>"Credit Card", 2=>"Octopus"],null,["class"=>"form-control"]) !!}
-                            {!! $errors->first('payment',"<span class='input-error'>:message</span>") !!}
-                        </div>
-
-                        <button class="btn btn-default" id="uploadButton">Upload Receipt</button>
-                        <button class="btn btn-danger" id="removeButton" style="display:none">Remove Receipt</button>
-                        {{-- Upload Receipt Form Input--}}
-                        <div class="form-group">
-                            <input type="file" name="receipt" id="receipt" style="display: none;"/>
-                            <input type="file" name="modified" id="modified" style="display: none;"/>
-                            {!! $errors->first('receipt',"<span class='input-error'>:message</span>") !!}
-                            {!! $errors->first('position',"<span class='input-error'>:message</span>") !!}
-                        </div>
-
-                        <input type="hidden" name="position" id="position" />
-
-                        {!! Form::submit("Register Purchase", ["class"=>"btn btn-primary btn-block btn-lg"]) !!}
-
-                        {!! Form::close() !!}
+                        @if($transaction->receipt)
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <img src="{{$transaction->receipt}}" alt="" />
+                                </div>
+                                <div class="col-md-9">
+                                    {!! Form::model($transaction, ['route'=>['transactions.update', $transaction->id], "role"=>"form", "files"=>true, 'id'=>'form', 'method'=>'PATCH']) !!}
+                                    @include('partials.form', ['submitButtonText'=>"Update Record"])
+                                    {!! Form::close() !!}
+                                </div>
+                            </div>
+                        @else
+                            {!! Form::model($transaction, ['route'=>['transactions.update', $transaction->id], "role"=>"form", "files"=>true, 'id'=>'form', 'method'=>'PATCH']) !!}
+                                @include('partials.form', ['submitButtonText'=>"Update Record"])
+                            {!! Form::close() !!}
+                        @endif
                     </div>
                 </div>
             </div>
@@ -62,11 +34,16 @@
 @section('scripts')
     <script>
         navigator.geolocation.getCurrentPosition(function(position){
+            var positionField = $('[name="position"]');
+            var positionFieldIsNotEmpty =  function () {
+                return $("[name='position']") != "";
+            };
             $(".panel-body").prepend("<span>"+position.coords.latitude+"</span>");
-            $('[name="position"]').val(position.coords.latitude+","+position.coords.longitude);
-            console.log($('[name="position"]'));
+            positionField.val(position.coords.latitude+","+position.coords.longitude);
+            console.log(positionField);
+
             $("From").submit(function(e){
-                if($("[name='position']") != "") return;
+                if(positionFieldIsNotEmpty()) return;
                 e.preventDefault();
             });
         },function(error){
@@ -81,6 +58,9 @@
         var form = $("form");
         var resizedImage = '';
         var receiptIsNotEmpty = function() {
+            @if(isset($transaction->receipt) and $transaction->receipt)
+                return true;
+            @endif
             return receipt.val() != "" && receipt.val() != 'undefined' ;
         };
         var nameIsValid = function (name) {
@@ -89,7 +69,7 @@
         var constructFormData = function (inputs, targetName, targetValue) {
             var formData = new FormData();
             $.each(inputs,function(){
-                name = inputs.attr('name')
+                var name = inputs.attr('name');
                 if(nameIsValid(name))
                 {
                     if(name == targetName)
