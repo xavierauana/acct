@@ -61,17 +61,23 @@
 
 @section('scripts')
     <script>
-        navigator.geolocation.getCurrentPosition(function(position){
-            $(".panel-body").prepend("<span>"+position.coords.latitude+"</span>");
-            $('[name="position"]').val(position.coords.latitude+","+position.coords.longitude);
-            console.log($('[name="position"]'));
+        var success =  function (position){
+            var latitude = position.coords.latitude;
+            var longitude = position.coords.longitude;
+            var accuracy = position.coords.accuracy;
+            $('[name="position"]').val(latitude+","+ longitude);
             $("From").submit(function(e){
                 if($("[name='position']") != "") return;
                 e.preventDefault();
             });
-        },function(error){
-            console.log("error code:"+error.code);
-        });
+        };
+        var error = function (errors){
+            console.log("error code:"+errors.code);
+        };
+        var options = {
+            enableHighAccuracy: true
+        };
+        navigator.geolocation.getCurrentPosition(success,error,options);
     </script>
 
     <script>
