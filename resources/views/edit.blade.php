@@ -38,7 +38,7 @@
             var positionFieldIsNotEmpty =  function () {
                 return $("[name='position']") != "";
             };
-            $(".panel-body").prepend("<span>"+position.coords.latitude+"</span>");
+//            $(".panel-body").prepend("<span>"+position.coords.latitude+"</span>");
             positionField.val(position.coords.latitude+","+position.coords.longitude);
             console.log(positionField);
 
