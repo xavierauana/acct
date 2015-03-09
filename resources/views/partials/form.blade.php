@@ -31,7 +31,7 @@
 {{-- Upload Receipt Form Input--}}
 <div class="form-group">
     <input type="file" name="receipt" id="receipt" style="display: none;"/>
-    <input type="file" name="modified" id="modified" style="display: none;"/>
+    <input type="hidden" name="remove" id="remove" value="0"/>
     {!! $errors->first('receipt',"<span class='input-error'>:message</span>") !!}
     {!! $errors->first('position',"<span class='input-error'>:message</span>") !!}
 </div>

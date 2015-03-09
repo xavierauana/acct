@@ -39,6 +39,7 @@ class updatePurchaseRecordCommandHandler {
 
         $data = $command->request->all();
         $data['vendor'] = $this->vendor->findOrCreateVendorByName($command->request->get('vendor'))->id;
+        $data['remove'] != true ? : $data['receipt'] ="";
         $id = $command->id;
         $this->transaction->updateRecord($id, $data);
 	}

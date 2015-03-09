@@ -68,4 +68,15 @@ class Transaction extends Model implements TransactionInterface{
         $record = $this->findOrFail($id);
         $record->update($data);
     }
+
+    /**
+     * @param $id
+     *
+     * @return mixed
+     */
+    public function deleteRecordById($id)
+    {
+        $record = $this->findOrFail($id);
+        $record->delete();
+    }
 }

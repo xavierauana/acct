@@ -11,6 +11,11 @@ namespace App\Contracts\Repositories;
 
 use App\Amount;
 
+/**
+ * Interface TransactionInterface
+ *
+ * @package App\Contracts\Repositories
+ */
 interface TransactionInterface {
 
     /**
@@ -39,4 +44,11 @@ interface TransactionInterface {
      * @return mixed
      */
     public function updateRecord($id, array $data);
+
+    /**
+     * @param $id
+     *
+     * @return mixed
+     */
+    public function deleteRecordById($id);
 }

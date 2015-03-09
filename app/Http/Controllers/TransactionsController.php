@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use App\Amount;
+use App\Commands\deleteRecordCommand;
 use App\Commands\getAllTransactionsCommand;
 use App\Commands\getTheTransactionCommand;
 use App\Commands\registerANewTransactionsCommand;
@@ -108,7 +109,8 @@ class TransactionsController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		//
+		$this->dispatch(new deleteRecordCommand($id));
+        return redirect()->route('transactions.index');
 	}
 
 }
