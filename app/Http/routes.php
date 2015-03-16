@@ -14,8 +14,14 @@
 Route::get('/', 'WelcomeController@index');
 
 Route::group(['middleware'=>'auth'], function(){
+    Route::get("dashboard",[
+        'as' => 'dashboard',
+        'uses' => 'TransactionsController@index'
+    ]);
     Route::resource('transactions','TransactionsController');
 });
+
+Route::resource('videos','VideosController');
 
 Route::get('home', 'HomeController@index');
 

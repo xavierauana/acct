@@ -11,7 +11,7 @@
 	<!-- Fonts -->
 	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-
+    @yield('style')
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -37,20 +37,23 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">Accounting</a>
+				<a class="navbar-brand" href="{{Auth::check() ? route('dashboard') :url('/') }}">A & A Creation Co.</a>
 			</div>
 
+
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				<ul class="nav navbar-nav">
-					<li><a href="{{route('transactions.create')}}">New Entry</a></li>
-					<li><a href="{{route('transactions.index')}}">History</a></li>
-				</ul>
+                @if(Auth::check())
+                    <ul class="nav navbar-nav">
+                        <li><a href="{{route('transactions.create')}}">New Entry</a></li>
+                        <li><a href="{{route('transactions.index')}}">History</a></li>
+                    </ul>
+                @endif
 
 				<ul class="nav navbar-nav navbar-right">
 					@if (Auth::guest())
 						<li><a href="/auth/login">Login</a></li>
-						<li><a href="/auth/register">Register</a></li>
 					@else
+                        <li><a href="/auth/register">Register</a></li>
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
@@ -67,7 +70,10 @@
 
 	<!-- Scripts -->
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/components/jquery/dist/jquery.min.js"><\/script>')</script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script>if(typeof($.fn.modal) === 'undefined'){document.write('<script src="/components/bootstrap/dist/js/bootstrap.min.js"><\/script>')}</script>
+
     @yield('scripts')
 </body>
 </html>
