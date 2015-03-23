@@ -44,8 +44,12 @@
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 @if(Auth::check())
                     <ul class="nav navbar-nav">
-                        <li><a href="{{route('transactions.create')}}">New Entry</a></li>
-                        <li><a href="{{route('transactions.index')}}">History</a></li>
+                        @if(Auth::user()->can('transaction_create'))
+                            <li><a href="{{route('transactions.create')}}">New Entry</a></li>
+                        @endif
+                        @if(Auth::user()->can('transaction_update'))
+                                <li><a href="{{route('transactions.index')}}">History</a></li>
+                        @endif
                     </ul>
                 @endif
 

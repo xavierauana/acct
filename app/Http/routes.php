@@ -19,6 +19,9 @@ Route::group(['middleware'=>'auth'], function(){
         'uses' => 'TransactionsController@index'
     ]);
     Route::resource('transactions','TransactionsController');
+    Route::resource('roles','RolesController');
+    Route::resource('permissions','PermissionsController');
+    Route::resource('users','UsersController');
 });
 
 Route::resource('videos','VideosController');
